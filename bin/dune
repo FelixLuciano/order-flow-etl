@@ -1,0 +1,4 @@
+(executable
+ (public_name OrderFlowETL)
+ (name main)
+ (libraries OrderFlowETL))
