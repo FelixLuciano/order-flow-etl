@@ -1,6 +1,4 @@
 module Order = struct
-  type primaryKey = int
-  type dateISO = string
 
   type status =
     | Pending
@@ -11,9 +9,11 @@ module Order = struct
     | Online
     | Physical
 
+  type t_constructor = int * string * string * string
+
   type t = {
-    id :         primaryKey;
-    order_date : dateISO;
+    id :         int;
+    order_date : string;
     status :     status;
     origin :     origin;
   }
@@ -39,11 +39,19 @@ module Order = struct
     | _ -> failwith "Invalid Order Origin"
 
   let create id order_date status origin =
-    let statuss = orderStatus_from_string status in
-    let origins = orderOrigin_from_string origin in
-    { id=id; order_date=order_date; status=statuss; origin=origins }
+    let status = orderStatus_from_string status in
+    let origin = orderOrigin_from_string origin in
+    { id=id; order_date=order_date; status=status; origin=origin }
   ;;
 
+  let constructor (tuple : t_constructor) =
+    match tuple with
+    | id, order_date, status, origin -> create id order_date status origin
+
   let print o =
-    Printf.printf "id:\t%d\nDate:\t%s\nStatus:\t%s\nOrigin:\t%s\n" o.id o.order_date (orderStatus_to_string o.status) (orderOrigin_to_string o.origin)
+    Printf.printf "id:\t%d\nDate:\t%s\nStatus:\t%s\nOrigin:\t%s\n"
+      ( o.id )
+      ( o.order_date)
+      ( orderStatus_to_string o.status )
+      ( orderOrigin_to_string o.origin )
 end ;;

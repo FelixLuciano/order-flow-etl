@@ -1,4 +1,5 @@
 (executable
  (public_name OrderFlowETL)
  (name main)
- (libraries OrderFlowETL))
+ (libraries mainlib)
+ (modules main Order OrderItem))
