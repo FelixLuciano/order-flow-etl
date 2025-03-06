@@ -6,10 +6,11 @@ module Dataframe (S : Series) = struct
   let init = { data = [] } ;;
 
   let append df row =
-    df.data <- row :: df.data
+    df.data <- row :: df.data;
+    row
   ;;
 
-  (* let push = append S.create *)
+  let push df a = append df (S.constructor a)
 
   let tail df n =
     List.nth df.data n

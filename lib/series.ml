@@ -1,4 +1,6 @@
 module type Series = sig
   type t
-  (* val create : t *)
+  type t_constructor
+
+  val constructor : t_constructor -> t
 end
