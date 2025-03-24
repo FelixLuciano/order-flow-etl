@@ -1,6 +1,7 @@
 module type Series = sig
   type t
-  type t_constructor
-
-  val constructor : t_constructor -> t
+  
+  val columns : string list
+  val constructor : string list -> t
+  val dump : t -> string list
 end

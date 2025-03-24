@@ -1,17 +1,13 @@
 module OrderItem = struct
-  type primaryKey = int
-  type foreignKey = int
-  type currencyAmount = float
-
-  type t_constructor = primaryKey * foreignKey * int * currencyAmount * currencyAmount
-
   type t = {
-    item_id:  primaryKey;
-    order_id: foreignKey;
+    item_id:  int;
+    order_id: int;
     quantity: int;
-    price:    currencyAmount;
-    tax:      currencyAmount;
+    price:    float;
+    tax:      float;
   }
+
+  let columns = ["item_id"; "order_id"; "quantity"; "price"; "tax"]
 
   let create order_id item_id quantity price tax =
     { order_id; item_id; quantity; price; tax }

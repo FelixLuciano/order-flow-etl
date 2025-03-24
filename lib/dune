@@ -1,3 +1,4 @@
 (library
  (name mainlib)
- (modules types series dataframe))
+ (libraries csv)
+ (modules types series dataframe csvloader))

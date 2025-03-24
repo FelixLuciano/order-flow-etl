@@ -3,19 +3,17 @@ open Mainlib.Series
 module OrderItem : sig
   include Series
 
-  type primaryKey = int
-  type foreignKey = int
-  type currencyAmount = float
-  type t_constructor = primaryKey * foreignKey * int * currencyAmount * currencyAmount
   type t = {
-    item_id :  primaryKey;
-    order_id : foreignKey;
+    item_id :  int;
+    order_id : int;
     quantity : int;
-    price :    currencyAmount;
-    tax :      currencyAmount;
+    price :    float;
+    tax :      float;
   }
 
-  val create : primaryKey -> foreignKey -> int -> currencyAmount -> currencyAmount -> t
-  val construct : t_constructor -> t
+  val columns : (string * string * string * string * string) list
+  val create : int -> int -> int -> float -> float -> t
+  val construct : string list -> t
+  val dump : t -> string list
 
 end ;;

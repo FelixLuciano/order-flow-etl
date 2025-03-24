@@ -7,16 +7,17 @@ module Order : sig
   type origin = Online | Physical
   type t = {
     id :         int;
+    client_id :  int;
     order_date : string;
     status :     status;
     origin :     origin;
   }
-  type t_constructor = int * string * string * string
-  val orderStatus_to_string : status -> string
-  val orderStatus_from_string : string -> status
-  val orderOrigin_to_string : origin -> string
-  val orderOrigin_from_string : string -> origin
-  val create : int -> string -> string -> string -> t
-  val constructor : t_constructor -> t
+  val string_of_orderStatus : status -> string
+  val orderStatus_of_string : string -> status
+  val string_of_orderOrigin : origin -> string
+  val orderOrigin_of_string : string -> origin
+  val create : int -> int -> string -> string -> string -> t
+  val constructor : string list -> t
+  val dump : t -> string list
   val print : t -> unit
 end ;;
