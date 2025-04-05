@@ -9,11 +9,11 @@ Read more about this project at the [#1 Issue](https://github.com/FelixLuciano/o
 ## Getting Started
 
 Sistem requirements:
-- [OCaml](https://ocaml.org/)
-- [Dune](https://dune.build/)
-- [Opam](https://opam.ocaml.org/) for dependency management
+- [OCaml](https://ocaml.org)
+- [Opam](https://opam.ocaml.org)
+- [Dune](https://dune.build)
 
-Or just run from the devcontainer. (Read more about)[https://code.visualstudio.com/docs/devcontainers/containers].
+Or just run from the devcontainer. [Read more about](https://code.visualstudio.com/docs/devcontainers/containers).
 
 Build and run:
 ```sh
