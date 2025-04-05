@@ -2,9 +2,11 @@
 
 # Order Flow ETL
 
-🚀 A high-performance ETL (Extract, Transform, Load) pipeline built in **OCaml** for processing order flow data.
+A high-performance ETL (Extract, Transform, Load) pipeline built in **OCaml** for processing order flow data.
 
-## 🚀 Getting Started
+Read more about this project at the [#1 Issue](https://github.com/FelixLuciano/order-flow-etl/issues/1).
+
+## Getting Started
 
 Sistem requirements:
 - [OCaml](https://ocaml.org/)
