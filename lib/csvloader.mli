@@ -7,7 +7,6 @@ module CsvLoader : sig
         @return Lista de listas de strings representando o conteúdo do arquivo *)
     val load : string -> string list list
 
-
     (** Salva dados no formato CSV em um arquivo
         @param filename Caminho do arquivo a ser exportado
         @param data Lista de listas de strings dos dados *)

@@ -1,5 +1,5 @@
 (library
  (public_name OrderFlowETL.mainlib)
  (name mainlib)
- (libraries csv)
- (modules types series dataframe csvloader))
+ (libraries csv ezcurl)
+ (modules types series dataframe csvloader httpcsvloader))

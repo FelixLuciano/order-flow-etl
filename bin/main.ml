@@ -3,6 +3,7 @@ open OrderItem
 open Report
 open Mainlib.Dataframe
 open Mainlib.Csvloader
+open Mainlib.Httpcsvloader
 
 module OrderDataFrame = DataFrame(Order) ;;
 module OrderItemDataFrame = DataFrame(OrderItem) ;;
@@ -24,13 +25,11 @@ let buildReport order items =
 ;;
 
 let order = OrderDataFrame.init () ;;
-OrderDataFrame.load order (CsvLoader.load "data/order.csv") ;;
-(* OrderDataFrame.load order (CsvLoader.load "data/aditional-order.csv") ;; *)
+OrderDataFrame.load order (HttpCsvLoader.load "http://localhost:3000/data/order.csv") ;;
 (* OrderDataFrame.load order (CsvLoader.load "data/aditional-order.csv") ;; *)
 
 let orderItems = OrderItemDataFrame.init () ;;
-OrderItemDataFrame.load orderItems (CsvLoader.load "data/order_item.csv") ;;
-(* OrderItemDataFrame.load orderItems (CsvLoader.load "data/aditional-order_item.csv") ;; *)
+OrderItemDataFrame.load orderItems (HttpCsvLoader.load "http://localhost:3000/data/order_item.csv") ;;
 (* OrderItemDataFrame.load orderItems (CsvLoader.load "data/aditional-order_item.csv") ;; *)
 
 let report = buildReport order orderItems in
