@@ -18,6 +18,7 @@ Or just run from the devcontainer. [Read more about](https://code.visualstudio.c
 Build and run:
 ```sh
 eval $(opam env)
+opam install dune csv odoc
 dune build
 dune exec _build/default/bin/main.exe
 ```
