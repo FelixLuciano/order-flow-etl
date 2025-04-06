@@ -19,9 +19,6 @@ module Order : sig
         origin :     origin;
     }
 
-    (** Lista de colunas que compõem o dado, na ordem: id; client_id; order_date; status; origin*)
-    val columns : (string * string * string * string * string) list
-
     (** Converte um valor de [status] para string
         @param s Valor do tipo [status]
         @return String representando o status *)
@@ -57,7 +54,7 @@ module Order : sig
     val constructor : string list -> t
 
     (** Serializa uma ordem de compra
-        @return Lista de strings, na ordem: id; client_id; order_date; status; origin
+        @return Lista de strings, na ordem: id; client_id; order_date; status; origin *)
     val dump : t -> string list
 
     (** Imprime um pedido no formato legível

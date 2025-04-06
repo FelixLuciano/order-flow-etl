@@ -14,9 +14,6 @@ module OrderItem : sig
         tax :      float;
     }
 
-    (** Lista de colunas que compõem o dado, na ordem: item_id; order_id; quantity; price; tax *)
-    val columns : (string * string * string * string * string) list
-
     (** Cria um item de ordem de compra
         @param item_id Identificador do item
         @param order_id Identificador da ordem relacionada
@@ -29,7 +26,7 @@ module OrderItem : sig
     (** Constroi um item de ordem de compra a partir de strings
         @param values Lista de strings, na ordem: item_id; order_id; quantity; price; tax
         @return O item de criado *)
-    val construct : string list -> t
+    val constructor : string list -> t
 
     (** Imprime um item de ordem de compra no formato legível
         @param o item a ser impresso *)

@@ -1,6 +1,6 @@
 open Series
 
-module Dataframe (S : Series) = struct
+module DataFrame (S : Series) = struct
   type t = {
     mutable data : S.t list
   }
